@@ -315,10 +315,12 @@ function! android#emulator()
   let l:avd = strpart(l:option, 3)
 
 
-  execute 'silent !' . android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null  &'
+  "execute 'silent !' . android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null  &'
   redraw!
 
   echo "avd: " . l:avd . " bin: " . android#emulatorbin()
+
+  call job#start('silent !' . android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null')
 
 endfunction
 
