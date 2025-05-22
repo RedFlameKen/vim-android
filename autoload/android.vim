@@ -321,7 +321,7 @@ function! android#emulator()
   echo "avd: " . l:avd . " bin: " . android#emulatorbin()
 
   let l:options = {}
-  call job#start('silent !' . android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null', l:options)
+  call job#start(android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null', l:options)
 
 endfunction
 
