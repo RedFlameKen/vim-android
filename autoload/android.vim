@@ -320,7 +320,7 @@ function! android#emulator()
 
   echo "avd: " . l:avd . " bin: " . android#emulatorbin()
 
-  call job#start('silent !' . android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null')
+  call job#start('silent !' . android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null', l:options)
 
 endfunction
 
