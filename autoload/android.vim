@@ -314,7 +314,7 @@ function! android#emulator()
   let l:option = l:avds[l:choice]
   let l:avd = strpart(l:option, 3)
 
-  let l:options = { detach: 1 }
+  let l:options = { 'detach': true }
   call job#start(android#emulatorbin() . ' -avd ' . l:avd . ' 2>/dev/null', l:options)
   redraw!
 
